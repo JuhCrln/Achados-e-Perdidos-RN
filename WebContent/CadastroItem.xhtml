@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Cadastro Item</title>
+	<link type="text/css" rel="stylesheet"
+		href="#{request.contextPath}/css/default.css" />
+</h:head>
+<h:body>
+	<p:layout fullPage="true">
+		<p:layoutUnit position="north" size="50" class="classtop">
+
+		</p:layoutUnit>
+		<p:layoutUnit position="south" size="50">
+			<center>
+				<h:outputText
+					value=" Achados e Perdidos RN| Copyright © 2015 - v 1.0" />
+			</center>
+		</p:layoutUnit>
+		<p:layoutUnit position="west" size="300">
+			<h:form>
+				<p:growl autoUpdate="true" />
+
+				<p:panelMenu style="width:300px">
+					<p:submenu label="Objetos">
+						<p:menuitem value="Buscar Objeto Perdido" outcome="BuscaItem.xhtml"
+							icon="ui-icon-document" />
+						<p:menuitem value="Voltar" outcome="TelaUsuario.xhtml"
+							icon="ui-icon-arrowrefresh-1-w" />
+					</p:submenu>
+
+					<p:separator />
+
+				</p:panelMenu>
+			</h:form>
+
+		</p:layoutUnit>
+		<p:layoutUnit position="east" size="200">
+			<h:outputText value="Anúncios" />
+		</p:layoutUnit>
+		<p:layoutUnit position="center">
+			<h:form>
+		<center>
+			<h:outputText value="Cadastro de Objetos Perdidos" />
+		</center>
+		<br />
+		<br />
+		<center>
+			<h:panelGrid columns="2" id="matchGrid" cellpadding="3">
+
+				<h:outputText value="Tipo: " />
+				<p:inputText id="tipo"
+					value="#{mBAchadosPerdidosRN.item.tipo}" feedback="true" />
+
+				<h:outputText value="Marca: " />
+				<p:inputText id="marca"
+					value="#{mBAchadosPerdidosRN.item.marca}" feedback="true" />
+
+				<h:outputText value="Cor: " />
+				<p:inputText id="cor"
+					value="#{mBAchadosPerdidosRN.item.cor}" feedback="true" />
+
+				<h:outputText value="Modelo: " />
+				<p:inputText id="modelo"
+					value="#{mBAchadosPerdidosRN.item.modelo}" feedback="true" />
+				
+				<p:spacer height="15" />	
+			    <!-- <p:separator /> -->
+
+				<h:outputText value="Bairro: " />
+				<p:inputText id="bairro"
+					value="#{mBAchadosPerdidosRN.item.bairro}"
+					feedback="true" />
+
+				<h:outputText value="Ponto de Referência:" />
+				<p:inputText id="pontoDeReferencia"
+				value="#{mBAchadosPerdidosRN.item.pontoDeReferencia}" feedback="true" />
+				
+				<h:outputText value="Horário: " />
+				<p:inputText id="horario"
+					value="#{mBAchadosPerdidosRN.item.horario}" feedback="true" />
+				
+				<h:outputText value="Outras Características: " />
+   			 	<p:inputTextarea rows="6" cols="33" value="#{mBAchadosPerdidosRN.item.outrasCaracteristicas}" feedback="true" />
+
+			</h:panelGrid>
+		</center>
+		<br />
+		<br />
+			<center>
+			<p:commandButton
+				actionListener="#{mBAchadosPerdidosRN.salvarItem}"
+				update="matchGrid" value="Cadastrar" />
+		</center>
+	</h:form>
+		</p:layoutUnit>
+	</p:layout>
+</h:body>
+</html>

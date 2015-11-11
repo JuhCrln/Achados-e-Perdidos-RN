@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Busca</title>
+	<link type="text/css" rel="stylesheet"
+		href="#{request.contextPath}/css/default.css" />
+</h:head>
+<h:body>
+	<p:layout fullPage="true">
+		<p:layoutUnit position="north" size="50" class="classtop">
+
+		</p:layoutUnit>
+		<p:layoutUnit position="south" size="50">
+			<center>
+				<h:outputText
+					value=" Achados e Perdidos RN| Copyright © 2015 - v 1.0" />
+			</center>
+		</p:layoutUnit>
+		<p:layoutUnit position="west" size="300">
+			<h:form>
+				<p:growl autoUpdate="true" />
+
+				<p:panelMenu style="width:300px">
+					<p:submenu label="Objetos">
+						<p:menuitem value="Cadastrar Objeto Perdido"
+							outcome="CadastroItem.xhtml" icon="ui-icon-document" />
+						<p:menuitem value="Voltar" outcome="TelaUsuario.xhtml"
+							icon="ui-icon-arrowrefresh-1-w" />
+					</p:submenu>
+
+					<p:separator />
+
+				</p:panelMenu>
+			</h:form>
+
+		</p:layoutUnit>
+		<p:layoutUnit position="east" size="200">
+			<h:outputText value="Anúncios" />
+		</p:layoutUnit>
+		<p:layoutUnit position="center">
+			<br />
+			<br />
+			<br />
+			<br />
+			<center>
+				<h:form>
+					<h:outputText value="Filtro: " />
+					<p:inputText id="filtro" value="#{mBAchadosPerdidosRN.filtro}"
+						feedback="true" />
+					<br />
+					<br />
+					<h:outputText value="Palavra-chave: " />
+					<p:inputText id="busca" value="#{mBAchadosPerdidosRN.busca}"
+						feedback="true" />
+
+					<br />
+					<br />
+					<p:commandButton
+						actionListener="#{mBAchadosPerdidosRN.buscarItemF}" value="Buscar" />
+				</h:form>
+
+
+			</center>
+		</p:layoutUnit>
+	</p:layout>
+</h:body>
+</html>
