@@ -1,0 +1,65 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<center>
+		<h:outputText>Cadastro de Usuários</h:outputText>
+	</center>
+</h:head>
+
+<h:body>
+	<h:form>
+		<center>
+			<h:outputText value="Cadastro de Usuários" />
+		</center>
+		<br />
+		<br />
+		<center>
+			<h:panelGrid columns="2" id="matchGrid" cellpadding="3">
+
+
+				<h:outputText value="Nome: " />
+				<p:inputText id="nome" value="#{mBAchadosPerdidosRN.usuario.nome}"
+					feedback="true" />
+
+				<h:outputText value="E-mail: " />
+				<p:inputText id="email" value="#{mBAchadosPerdidosRN.usuario.email}"
+					feedback="true" />
+
+				<h:outputText value="Telefone: " />
+				<p:inputText id="telefone"
+					value="#{mBAchadosPerdidosRN.usuario.telefone}" feedback="true" />
+
+				<h:outputText value="Cidade: " />
+				<p:inputText id="cidade"
+					value="#{mBAchadosPerdidosRN.usuario.cidade}" feedback="true" />
+
+				<h:outputText value="Estado: " />
+				<p:inputText id="estado"
+					value="#{mBAchadosPerdidosRN.usuario.estado}" feedback="true" />
+
+				<h:outputText value="Nome de Usuário: " />
+				<p:inputText id="nomeDeUsuario"
+					value="#{mBAchadosPerdidosRN.usuario.nomeDeUsuario}"
+					feedback="true" />
+
+				<h:outputText value="Senha: " />
+				<p:inputText id="senha" value="#{mBAchadosPerdidosRN.usuario.senha}"
+					feedback="true" />
+
+			</h:panelGrid>
+		</center>
+		<p:spacer height="10" />
+		<br />
+		<br />
+		<center>
+			<p:commandButton
+				actionListener="#{mBAchadosPerdidosRN.salvarUsuario}"
+				update="matchGrid" value="Cadastrar" />
+		</center>
+	</h:form>
+
+</h:body>
+</html>
